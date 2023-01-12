@@ -1,20 +1,36 @@
 import React from "react"
 import ReactDOM  from "react-dom/client";
+import { BiUserCircle } from "react-icons/bi";
+
+const heading1 = React.createElement("h1",{key:"h1"},"Heading1"); 
+const heading2 = React.createElement("h2",{key:"h2"},"Heading2");
+const heading3 = React.createElement("h3",{key:"h3"},"Heading3");
+const container = React.createElement("div",{className:"title"},[heading1,heading2,heading3]);
 
 const Title = ()=>(
-   <h1>Hi</h1>
+   <h3 key ="h3">Heading3</h3>
 );
 
 const HeaderComponent =()=>{
 return (
-   <div>
-       <h1>I amm</h1>
-       <Title/>
+   <div className="title">
+       <h1 key ="h1">Heading1</h1>
+       <h2 key="h2">Heading2</h2>
+      <Title/>
    </div>
 );
-};
+}; 
+const Header =() =>{
+   return (
+   <div className="header">
+      <img className="logo" src ="https://png.pngtree.com/png-vector/20190830/ourmid/pngtree-crossed-spoon-and-fork-restaurant-and-food-logo-design-png-image_1716397.jpg" alt="Food Logo"></img>
+      <input type="text" className="searchBox" placeholder="Search your food here..."></input>
+      <BiUserCircle />
+      
+   </div>);
+}
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<HeaderComponent/>); 
+root.render(<Header/>); 
 
 /*  
 JSX: 
@@ -41,6 +57,15 @@ Eg.,<script type="module"></script>, tells that the script acts as a module whic
 
 {TitleComponent} is the piece of javascript code ( variable ) that could be executed within the JSX 
 
-{<TitleComponent/>}
+{<TitleComponent/>} is the functional component built by JSX that could be evoked within other copmonent 
+<TitleComponent></TitleComponent> : <TitleComponent /> and <TitleComponent></TitleComponent> are equivalent only when < TitleComponent /> has no child components. The opening and closing tags are created to include the child components.
+
+Example
+<TitleComponent>
+    <FirstChildComponent />
+    <SecondChildComponent />
+    <ThirdChildComponent />
+</TitleComponent>
+
 
 */ 

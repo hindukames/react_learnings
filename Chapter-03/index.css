@@ -1,0 +1,17 @@
+#container{
+    background: yellow;
+}
+.header{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    height:50px;
+    border:1px solid salmon;
+    background-color: azure;
+    padding-right: 10px;
+} 
+.header img {
+    height: 50px;
+}
+
+
